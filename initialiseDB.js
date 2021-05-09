@@ -2,18 +2,21 @@ const fs = require('fs');
 
 let db = {};
 
-db["videos"] = fs.readFileSync('./data/videos.json', (error, data) => {
+rawVideosData = fs.readFileSync('./data/videos.json', (error, data) => {
     if(error){
         console.error(error.message)
     }
-    return JSON.parse(data)
+    return data;
 })
 
-db["playlists"] = fs.readFileSync('./data/playlists.json', (error, data) => {
+rawPlaylistData = fs.readFileSync('./data/playlists.json', (error, data) => {
     if(error) {
         console.error(error.message)
     }
-    return JSON.parse(data)
+    return data;
 })
+
+db["videos"] = JSON.parse(rawVideosData);
+db["playlists"] = JSON.parse(rawPlaylistData);
 
 module.exports = db;
