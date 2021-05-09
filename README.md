@@ -22,15 +22,19 @@ The api has been developed using NodeJS so NodeJS and npm is required to be inst
   - if videos and description data are not provided at the time of post request, playlist is create with empty array of videos and empty string for description
   
 ### Get all playlist
-  - url **http://localhost:8080/api/playlists**
+  - url: **http://localhost:8080/api/playlists**
   - method: GET
   - payload not required
   
 ### Update an existing playlist
-  - url **http://localhost:8080/api/playlists/<id>**
+  - url: **http://localhost:8080/api/playlists/<id>**
   - method: PATCH
   - payload: {
                 "name": "some string",
                 "description": "some string",
              }
               
+### Delete an existing playlist
+  - url: **http://localhost:8080/api/playlists/<id>**
+  - method: DELETE
+  - payload: not required
