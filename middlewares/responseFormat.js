@@ -81,5 +81,5 @@ const errorResponse = (message, statusCode) => {
 // };
 
 module.exports = {
-    successResponse, errorResponse, validationErrorResponse
+    successResponse, errorResponse
 }
